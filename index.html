@@ -5,113 +5,103 @@
 
 </head>
 <body id=page-top data-spy=scroll data-target=.navbar-fixed-top>
-	<input type="checkbox" id="nav-trigger" class="nav-trigger menu-button-class">
+    <div id="menuWrapper">
+	 <input type="checkbox" id="nav-trigger" class="nav-trigger menu-button-class">
 	<!-- Hamburger icon -->
 	<label for="nav-trigger" id="label-trigger" class="label-trigger"><span>Menu</span></label>
 	
 	<nav role=navigation>
 		<ul class="menu">
-			<li>
-				<a class="page-scroll" href="/tattoos">Tattoos</a>
-			</li>
-			<li>
-				<a class="page-scroll" href="#about">Marko Jovicic</a>
-			</li>
-			<li>
-				<a class="page-scroll" href="/contact">Contact</a>
-			</li>
+			<li><a class="page-scroll" href="/tattoos">Tattoos</a></li>
+			<li><a class="page-scroll" href="#about">Marko Jovicic</a></li>
+			<li><a class="page-scroll" href="/contact">Contact</a></li>
 		</ul>
-		
 	</nav>
+    </div>
 	<main class="main-container" role="main">
 		<div class=intro-body>
-			
 		</div>
-	</div>
-</main>
-<section id="about" class="container content-section text-center">
-	<div class=row>
-		<div class="col-lg-8 col-lg-offset-2">
-			<h2 style="font-size:36px; font-weight: normal">About Marko</h2>
-
-			<p>
-				I'm Marko Jovičić. I did my first tattoo at the beginning of 2011 and a year after I continue to excel my work as a resident tattoo artist at Damir Tattoo Studio in Belgrade, Serbia. During the following year I decided to specialize in black and grey realism, thus I still equally like to explore in Japanese traditional and neotraditional style.  <br/>
-			</p>
-		</div>
-	</div>
-</section>
-
-<section id="reserve" class="container content-section text-center">
-	<div class="reserve-section">
-		<div class="row">
+	</main>
+	<section id="about" class="container content-section text-center">
+		<div class=row>
 			<div class="col-lg-12">
-				<div class="page-title-wrapper">
-					<h1 class="page-title" data-content-field="title">Book a tattoo</h1>
-				</div>
-				<div class="page-desc" data-content-field="description">
-					<p>Get booked in with Ash for a tattoo&nbsp;</p>
-					<p><a href="/book">BOOK NOW</a></p>
-				</div>
+				<h2 style="font-size:36px; font-weight: normal">About Marko</h2>
+				<p>
+					I'm Marko Jovičić. I did my first tattoo at the beginning of 2011 and a year after I continue to excel my work as a resident tattoo artist at Damir Tattoo Studio in Belgrade, Serbia. During the following year I decided to specialize in black and grey realism, thus I still equally like to explore in Japanese traditional and neotraditional style.  <br/>
+				</p>
 			</div>
 		</div>
-	</div>
-</section>
-<section id="gallery" class="container content-section text-center">
-	<div class="download-section">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2 style="font-size:36px; font-weight: normal;margin-top: 28px;"><a href="/tattoos"><span>Tattoos</span></a></h2>
-				<style type="text/css">
-				#gallery-1 {
-					margin: 100px auto 0;
-				}
+	</section>
 
-				#gallery-1 .gallery-item {
-					float: left;
-					margin-top: 10px;
-					text-align: center;
-					width: 20%;
-				}
+	<section id="reserve" class="container content-section text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="page-title-wrapper">
+						<h1 class="page-title" data-content-field="title">Book a tattoo</h1>
+					</div>
+					<div class="page-desc" data-content-field="description">
+						<p>Get booked in with Marko for a tattoo&nbsp;</p>
+						<p><a href="/contact">BOOK NOW</a></p>
+					</div>
+				</div>
+			</div>
+	</section>
+	<section id="gallery" class="container content-section text-center">
+		<div class="download-section">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2 style="font-size:36px; font-weight: normal;margin-top: 28px;"><a href="/tattoos"><span>Tattoos</span></a></h2>
+					<style type="text/css">
+					#gallery-1 {
+						margin: 100px auto 0;
+					}
 
-				#gallery-1 img {
-					border: 2px solid #cfcfcf;
-				}
+					#gallery-1 .gallery-item {
+						float: left;
+						margin-top: 10px;
+						text-align: center;
+						width: 20%;
+					}
 
-				#gallery-1 .gallery-caption {
-					margin-left: 0;
-				}
+					#gallery-1 img {
+						border: 2px solid #cfcfcf;
+					}
 
-			</style>
+					#gallery-1 .gallery-caption {
+						margin-left: 0;
+					}
 
-			<div id="gallery-1" class="gallery galleryid-7 gallery-columns-5 gallery-size-thumbnail">
-				<?php
-				$gallery = get_post_gallery(get_the_ID(), false);
-				//  $gallery = get_post_gallery_images( get_the_ID() ); 
-				//print_r($gallery["ids"]);exit; 
-				$slike = explode(",", $gallery["ids"]);
+				</style>
 
-				foreach ($slike as $attachment_id) {
-
-				$thumbnail = wp_get_attachment_image_src($attachment_id, "thumbnail");
-				$full = wp_get_attachment_image_src($attachment_id, "large");
-
-				?>
-				<dl class="gallery-item">
-					<dt class="gallery-icon portrait">
-						<a href="<?php echo $full[0] ?>"
-							rel="lightbox-same"><img width="150" height="150"
-							src="<?php echo $thumbnail[0] ?>"
-							class="attachment-thumbnail" alt="mareportfolio05"></a>
-						</dt>
-					</dl>
+				<div id="gallery-1" class="gallery galleryid-7 gallery-columns-5 gallery-size-thumbnail">
 					<?php
-				}
-				?>
-				<div id="clear" style="clear:both;"></div>
+					$gallery = get_post_gallery(get_the_ID(), false);
+					//  $gallery = get_post_gallery_images( get_the_ID() ); 
+					//print_r($gallery["ids"]);exit; 
+					$slike = explode(",", $gallery["ids"]);
+
+					foreach ($slike as $attachment_id) {
+
+					$thumbnail = wp_get_attachment_image_src($attachment_id, "thumbnail");
+					$full = wp_get_attachment_image_src($attachment_id, "large");
+
+					?>
+					<dl class="gallery-item">
+						<dt class="gallery-icon portrait">
+							<a href="<?php echo $full[0] ?>"
+								rel="lightbox-same"><img width="250" height="250"
+								src="<?php echo $thumbnail[0] ?>"
+								class="attachment-thumbnail" alt="mareportfolio05"></a>
+							</dt>
+						</dl>
+						<?php
+					}
+					?>
+					<div id="clear" style="clear:both;"></div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </section>
 <section id=contact class="container content-section text-center">
 	<div class=row>
