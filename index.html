@@ -10,90 +10,24 @@
 	<label for="nav-trigger" id="label-trigger" class="label-trigger"><span>Menu</span></label>
 	
 	<nav role=navigation>
-<!--<nav class="navbar navbar-custom navbar-fixed-top" role=navigation>
-    <div class="container">
-    	<div class="collapse navbar-collapse navbar-right navbar-main-collapse"> -->
-            <!--<a href="/" class="navbar">
-                <img src="/wp-content/themes/maretattoo/img/mare-beli-print.svg">
-             </a>
-         -->
-         <ul class="menu">
-         	<li>
-         		<a class="page-scroll" href="/tattoos">Tattoos</a>
-         	</li>
-         	<li>
-         		<a class="page-scroll" href="#about">Marko Jovicic</a>
-         	</li>
-         	<li>
-         		<a class="page-scroll" href="/contact">Contact</a>
-         	</li>
-         </ul>
-            <!-- Komentar 20.11.2017
-            <ul class="nav navbar-nav nav-left">
-                
-                <li>
-                    <a class="page-scroll" href="#download">Portfolio</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="/tattoos">Tattoos</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#about">Marko Jovicic</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav nav-r">
-                <li class="hidden active">
-                    <a href="#page-top"></a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                </li>
-                
-            </ul>
-        -->
-
-        <!--
-        </div>
-         Komentar 20.11.2017
-        <div class="responsive-menu">
-            <ul>
-                <li>
-                    <a class="page-scroll" href="/tattoos">Tattoos</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#about">Marko Jovicic</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#download">Tattoos</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-        
-    </div>-->
-</nav>
-<main class="main-container" role="main">
-	<div class=intro-body>
-        <!--<h1 class="page-title" data-content-field="title" data-shrink-original-size="60" style="letter-spacing: 0em;">Marko Jovicic</h1>
-        <br>
-        <div class="page-desc" data-content-field="description">
-            <p>UK based tattoo artist, specialising in black and grey<br>realism and custom designs</p>
-        </div>
-    -->
-        <!-- Komentar 20.11.2017
-        <div id=carousel class="carousel slide carousel-fade" data-ride=carousel>
-            <div class=carousel-inner>
-                <div class="active item"></div>
-                <div class=item></div>
-                <div class=item></div>
-            </div>
-            <a class="carousel-control left" href="#carousel" data-slide=prev>&lsaquo;</a>
-            <a class="carousel-control right" href="#carousel" data-slide=next>&rsaquo;</a>
-        -->
-    </div>
-</div>
+		<ul class="menu">
+			<li>
+				<a class="page-scroll" href="/tattoos">Tattoos</a>
+			</li>
+			<li>
+				<a class="page-scroll" href="#about">Marko Jovicic</a>
+			</li>
+			<li>
+				<a class="page-scroll" href="/contact">Contact</a>
+			</li>
+		</ul>
+		
+	</nav>
+	<main class="main-container" role="main">
+		<div class=intro-body>
+			
+		</div>
+	</div>
 </main>
 <section id="about" class="container content-section text-center">
 	<div class=row>
@@ -106,26 +40,7 @@
 		</div>
 	</div>
 </section>
-<!--
-<section id=about class="container content-section text-center subSection">
-    <div class=row>
-        <div class="col sqs-col-10 span-10">
-            <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-a115769e7b3ffb1c75d7">
-                <div class="sqs-block-content">
-                    <h1 class="text-align-center">Guest spots &amp; conventions</h1>
-                    <h3 class="text-align-center">Ash Lewis is based out of his own studio in Jersey but is often guesting at tattoo studios and conventions around the globe. keep up to date with where he is.</h3>
-                </div>
-            </div>
-        <div class="sqs-block button-block sqs-block-button" data-block-type="53" id="block-yui_3_17_2_3_1485533831627_14131">
-            <div class="sqs-block-content" id="yui_3_17_2_1_1511440050018_101">
-        <div class="sqs-block-button-container--center" data-alignment="center" data-button-size="medium" id="yui_3_17_2_1_1511440050018_100">
-	    <a href="https://www.ashlewis.tattoo/guest-spots-and-conventions/" class="sqs-block-button-element--medium sqs-block-button-element" data-initialized="true" id="yui_3_17_2_1_1511440050018_969">Learn More</a>
-	    </div>
-	    </div>
-	    </div>
-	    </div>
-</section>
--->
+
 <section id="reserve" class="container content-section text-center">
 	<div class="reserve-section">
 		<div class="row">
@@ -168,35 +83,35 @@
 
 			</style>
 
-				<div id="gallery-1" class="gallery galleryid-7 gallery-columns-5 gallery-size-thumbnail">
+			<div id="gallery-1" class="gallery galleryid-7 gallery-columns-5 gallery-size-thumbnail">
+				<?php
+				$gallery = get_post_gallery(get_the_ID(), false);
+				//  $gallery = get_post_gallery_images( get_the_ID() ); 
+				//print_r($gallery["ids"]);exit; 
+				$slike = explode(",", $gallery["ids"]);
+
+				foreach ($slike as $attachment_id) {
+
+				$thumbnail = wp_get_attachment_image_src($attachment_id, "thumbnail");
+				$full = wp_get_attachment_image_src($attachment_id, "large");
+
+				?>
+				<dl class="gallery-item">
+					<dt class="gallery-icon portrait">
+						<a href="<?php echo $full[0] ?>"
+							rel="lightbox-same"><img width="150" height="150"
+							src="<?php echo $thumbnail[0] ?>"
+							class="attachment-thumbnail" alt="mareportfolio05"></a>
+						</dt>
+					</dl>
 					<?php
-					$gallery = get_post_gallery(get_the_ID(), false);
-					//  $gallery = get_post_gallery_images( get_the_ID() ); 
-					//print_r($gallery["ids"]);exit; 
-					$slike = explode(",", $gallery["ids"]);
-
-					foreach ($slike as $attachment_id) {
-
-					$thumbnail = wp_get_attachment_image_src($attachment_id, "thumbnail");
-					$full = wp_get_attachment_image_src($attachment_id, "large");
-
-					?>
-					<dl class="gallery-item">
-						<dt class="gallery-icon portrait">
-							<a href="<?php echo $full[0] ?>"
-								rel="lightbox-same"><img width="150" height="150"
-								src="<?php echo $thumbnail[0] ?>"
-								class="attachment-thumbnail" alt="mareportfolio05"></a>
-							</dt>
-						</dl>
-						<?php
-					}
-					?>
-					<div id="clear" style="clear:both;"></div>
-				</div>
+				}
+				?>
+				<div id="clear" style="clear:both;"></div>
 			</div>
 		</div>
 	</div>
+</div>
 </section>
 <section id=contact class="container content-section text-center">
 	<div class=row>
