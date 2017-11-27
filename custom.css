@@ -164,7 +164,7 @@ a:focus {
 .intro {
     display: relative;
     width: 100%;
-    height: auto;
+    height: 100%;
     padding: 100px 0;
     text-align: center;
     color: #fff;
@@ -180,6 +180,11 @@ a:focus {
 }
 
 .intro-body {
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+/*.intro-body {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -187,7 +192,7 @@ a:focus {
     transform: translate(-50%, -50%);
     text-align: center;
 }
-
+*/
 .intro .intro-body .brand-heading {
     font-size: 40px;
 }
@@ -768,11 +773,12 @@ html, body {
         position: absolute;
         margin-left: auto;
         margin-right: auto;
+        margin-top:200px;
         left: 0;
         right: 0;
         text-align: center;
         z-index: 999;
-        border: #999 1px dotted;
+        /*border: #999 1px dotted;*/
     }
 }
 .menu li {
@@ -800,25 +806,47 @@ html, body {
 
 .main-container {
     /*max-width: 980px;*/
-    min-height: 100%;
+    height: 100%;
     margin: auto;
-    padding: 20px 0 20px 80px;
+    padding: 20px;
     position: relative;
     top: 0;
     bottom: 100%;
     left: 0;
     z-index: 1;
-    background: #eee;
+    background: yellow;
     background: url(../img/slikazasajt.jpg) no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    /*background-position-x: 50%;
+    background-position-y: 50%;*/
+    width:100%;
     /*background-attachment: fixed; */
 }
+
 @media only screen and (min-width: 40em) {
     .main-container {
-        padding: 20px;
+        padding: 0px 20px 20px 20px;
+    }
+}
+
+.main-container img {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    /*margin-right: -50%;*/
+    transform: translate( -50%, -50%);
+}
+
+@media only screen and (min-width: 40em) {
+    .main-container img {
+        top: 0%;
+        transform: translate( -50%, 0%)
     }
 }
 
@@ -880,15 +908,33 @@ html, body {
 body, html {
     overflow-x: hidden;
 }
-
-nav {
-    /*position: relative;*/
-    /*width: 100%;
+/*
+nav img {
+    display: none;
     position: absolute;
-    margin: 0 auto;
-    text-align: center;*/
+    left:50%;       
+    margin-left:-100px;
+    z-index: 2;
 }
 
+@media (min-width: 40em) {
+        nav img{
+            display: block;
+            margin-left:-100px;
+        }
+}
+*/
+
+/*
+nav {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+}
+*/
 /*.sect {
     height: 100%;
     background-color: blue;
@@ -909,23 +955,33 @@ nav {
     }
 
     #about {
-        min-height: 80%;
         background: #f8f8ff;
         color: #333333;
         z-index: 1;
-        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @media (min-width: 40em) {
+        #about{
+            height: 60%;
+        }
     }
     
     #about .row {
+        margin: auto;
+    }
+    /*#about .row {
         position: absolute;
         top: 50%;
         left: 50%;
-        /*margin-right: -50%;*/
+        margin-right: -50%;
         margin-left: 0;
         margin-right: 0;
         transform: translate(-50%, -50%);
         text-align: center;
-    }
+    }*/
 
     #reserve {
         min-height: 70%;
@@ -960,6 +1016,19 @@ nav {
     }
     .moveLeft {
         transform: translate(200px);
+    }
+    
+    
+    footer {
+        font-size:30px;
+        background: #000;    
+    }
+    
+    footer p{
+        font-size: 20px;
+    }
+    a {
+        color: white;
     }
 
 /*
