@@ -22,6 +22,7 @@ body {
     font-family: 'Montserrat', Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fff;
     background-color: #000;
+    opacity: .99;
 }
 
 html {
@@ -387,9 +388,11 @@ img::-moz-selection {
     background: 0 0;
 }
 
+/*
 body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
 }
+*/
 
 .nav-left {
     float: left;
@@ -762,7 +765,7 @@ html, body {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -999;
+    z-index: -1;
     list-style: none;
 }
 @media only screen and (min-width: 40em) {
@@ -829,11 +832,11 @@ html, body {
 
 .main-container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     
     height: 0;
     padding: 0; /* remove any pre-existing padding, just in case */
-    padding-bottom: 75%; /* for a 4:3 aspect ratio */
+    padding-bottom: 68%; /* 75% for a 4:3 aspect ratio */
     background-image: url(../img/slikazasajt.jpg);
     background-position: center center;
     background-size: 100%;
@@ -851,7 +854,7 @@ html, body {
         top: 0;
         bottom: 100%;
         left: 0;
-        z-index: 1;
+        z-index: 2;
         background: yellow;
         background: url(../img/slikazasajt.jpg) no-repeat;
         -webkit-background-size: cover;
@@ -863,7 +866,7 @@ html, body {
         width:100%;
     }
 }
-/*should remove unnecessary properties*/
+
 .main-container img {
     display: none;
     margin: 0;
@@ -893,7 +896,7 @@ html, body {
     position: absolute;
     left: 10px;
     top: 10px;
-    z-index: 2;
+    z-index: 3;
     height: 50px;
     width: 50px;
     cursor: pointer;
@@ -991,7 +994,7 @@ nav {
     #about {
         background: #f8f8ff;
         color: #333333;
-        z-index: 1;
+        z-index: 2;
         display: flex;
         justify-content: center;
         align-items: center;
