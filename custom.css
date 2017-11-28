@@ -350,7 +350,7 @@ ul.banner-social-buttons {
 
 @media(max-width:767px) {
     ul.banner-social-buttons li {
-        display: block;
+        display: inline;
         margin-bottom: 20px;
         padding: 0;
     }
@@ -572,9 +572,9 @@ body {
     margin-left: 51px;
 }
 
-.list-inline {
+/*.list-inline {
     display: inline-block;
-}
+}*/
 
 .navbar img {
     height: 200px;
@@ -981,6 +981,9 @@ nav {
     height: 50%;
     background-color: #fff;
     }*/
+    
+    
+    
     #gallery {
         min-height: 100%;
         background: #f8f8ff;
@@ -1057,12 +1060,15 @@ nav {
     
     
     footer {
-        font-size:30px;
         background: #000;    
     }
     
     footer p{
+        font-size: 14px;
+    }
+    footer p span{
         font-size: 20px;
+        letter-spacing: 2px;
     }
     a {
         color: white;
@@ -1082,3 +1088,14 @@ nav {
     }
     
 */
+.list-inline li {
+    display: inline-block;
+    border: none;
+}
+/*.list-inline li a {
+    display: inline-block;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+}*/
