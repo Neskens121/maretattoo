@@ -12,9 +12,27 @@
 	
 	<nav role=navigation>
 		<ul class="menu">
-			<li><a class="page-scroll" href="/tattoos">Tattoos</a></li>
-			<li><a class="page-scroll" href="#about">Marko Jovicic</a></li>
-			<li><a class="page-scroll" href="/contact">Contact</a></li>
+			<li><a class="page-scroll" href="/tattoos">
+			    <svg width="5.5em" height="1.2em">
+			        <use xlink:href="#css" />
+			        <text id="css" y="1em">Tattoos</text>
+			    </svg>
+			    </a>
+			</li>
+			<li><a class="page-scroll" href="#about">
+			    <svg width="10em" height="1.2em">
+			        <use xlink:href="#css2" />
+			        <text id="css2" y="1em">Marko Jovicic</text>
+			    </svg>
+			    </a>
+			</li>
+			<li><a class="page-scroll" href="/contact">
+			    <svg width="6em" height="1.2em">
+			        <use xlink:href="#css1" />
+			        <text id="css1" y="1em">Contact</text>
+			    </svg>
+			    </a>
+		    </li>
 		</ul>
 	</nav>
     </div>
@@ -54,28 +72,6 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h2 style="font-size:36px; font-weight: normal;margin-top: 28px;"><a href="/tattoos"><span>Tattoos</span></a></h2>
-					<style type="text/css">
-					#gallery-1 {
-						margin: 100px auto 0;
-					}
-
-					#gallery-1 .gallery-item {
-						float: left;
-						margin-top: 10px;
-						text-align: center;
-						width: 20%;
-					}
-
-					#gallery-1 img {
-						border: 2px solid #cfcfcf;
-					}
-
-					#gallery-1 .gallery-caption {
-						margin-left: 0;
-					}
-
-				</style>
-
 				<div id="gallery-1" class="gallery galleryid-7 gallery-columns-5 gallery-size-thumbnail">
 					<?php
 					$gallery = get_post_gallery(get_the_ID(), false);
@@ -106,24 +102,5 @@
 		</div>
 	</div>
 </section>
-<!--
-<section id=contact class="container content-section text-center">
-	<div class=row>
-		<div class="col-lg-12">
-			<h2 style="font-size:36px; font-weight: normal">Contact</h2>
-
-			<p><a href="mailto:maretattoo@gmail.com">maretattoo@gmail.com</a></p>
-			<div class="social-media">
-				<p>FOLLOW</p>
-				<ul class="list-inline banner-social-buttons">
-					<li><a href="https://www.facebook.com/maretattoo" class="btn btn-default btn-lg"><i	class="fa fa-facebook fa-fw"></i></a></li>
-					<li><a href="https://www.instagram.com/maretattoo" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i></a></li>
-					<li><a href="https://www.youtube.com/maretattooist" class="btn btn-default btn-lg"><i class="fa fa-youtube fa-fw"></i></a></li>	
-				</ul>
-			</div>
-		</div>
-	</div>
-</section>
--->
 </body>
 </html>
