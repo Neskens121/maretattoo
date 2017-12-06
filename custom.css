@@ -839,7 +839,7 @@ html, body {
     margin: 0;
     padding: 0;
     position: fixed;
-    top: 0;
+    top: 200px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -857,6 +857,7 @@ html, body {
         margin-top:200px;
         left: 0;
         right: 0;
+        top: 0;
         text-align: center;
         z-index: 999;
         
@@ -993,22 +994,43 @@ html, body {
 }
 
 .main-container img {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: -215px;
+    width: 150px;
+    height: 150px;
+    z-index: -3;
+    /*margin-right: -50%;*/
+    /*transform: translate( -50%, -50%);*/
+}
+
+/*
+.main-container img {
     display: none;
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     width: 200px;
-    height: 200px;
+    height: 200px;*/
     /*margin-right: -50%;*/
-    transform: translate( -50%, -50%);
-}
+    /*transform: translate( -50%, -50%);
+}*/
 
 @media only screen and (min-width: 40em) {
     .main-container img {
         display: block;
         top: 0%;
-        transform: translate( -50%, 0%)
+        margin: 0;
+        position: absolute;
+        left: 0px;
+        /*top: 50%;*/
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        z-index: auto;
+        transform: translate( -50%, 0%);
     }
 }
 
@@ -1252,17 +1274,17 @@ nav {
     background-image: url('http://www.galleryoftattoosnow.com/jeffgogueHOSTED/images/gallery/jeff-bg-img2.jpg');
     /*background-image: url('https://scontent.fbeg2-1.fna.fbcdn.net/v/t1.0-9/12226950_891257980923249_2245556423271243523_n.jpg?oh=5914593886c2415928c4d9a80126c1f7&oe=5AD3D325');
     background-image: url(../img/wolf-transparent-png.png);*/
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: top right;
-	border: none;
-	height: 100% !important;
-	/*opacity: .4;*/
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	width: 99% !important;
-	z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+    border: none;
+    height: 100% !important;
+    /*opacity: .4;*/
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 99% !important;
+    z-index: -1;
 }
 
 
@@ -1284,27 +1306,27 @@ nav {
 
 /*
 .menu li::before {
-	background: url(../img/slikazasajt.jpg) 0 / cover fixed;
+    background: url(../img/slikazasajt.jpg) 0 / cover fixed;
 }
 
 .menu li {
-	position: relative;
-	margin: 0 auto;
-	padding: 1em;
-	background: hsla(0,0%,100%,.25) border-box;
-	overflow: hidden;
-	border-radius: .3em;
-	box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
-	            0 .5em 1em rgba(0, 0, 0, 0.6);
-	text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
+    position: relative;
+    margin: 0 auto;
+    padding: 1em;
+    background: hsla(0,0%,100%,.25) border-box;
+    overflow: hidden;
+    border-radius: .3em;
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
+                0 .5em 1em rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
 }
 
 .menu li::before {
-	content: '';
-	position: absolute;
-	top: 0; right: 0; bottom: 0; left: 0;
-	margin: -10px;
-	z-index: -1;
-	-webkit-filter: blur(20px);
-	filter: blur(20px);
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: -10px;
+    z-index: -1;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
 }*/
