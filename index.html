@@ -4,30 +4,30 @@
 	<title></title>
 </head>
 <body id=page-top data-spy=scroll data-target=.navbar-fixed-top>
-	<div id="menuWrapper">
-		<input type="checkbox" id="nav-trigger" class="nav-trigger menu-button-class">
-		<!-- Hamburger icon -->
-		<label for="nav-trigger" id="label-trigger" class="label-trigger"><span>Menu</span></label>
-
-		<nav role=navigation>
-			<ul class="menu">
-				<li>
-					<a class="page-scroll" href="/tattoos">Tattoos</a>
-				</li>
-				<li>
-					<a class="page-scroll" href="/about">Marko Jovicic</a>
-				</li>
-				<li>
-					<a class="page-scroll" href="/contact">Contact</a>
-				</li>
-			</ul>
-		</nav>
-	</div>
+    <div id="menuWrapper">
+	 <input type="checkbox" id="nav-trigger" class="nav-trigger menu-button-class">
+	<!-- Hamburger icon -->
+	<label for="nav-trigger" id="label-trigger" class="label-trigger"><span>Menu</span></label>
+	
+	<nav role=navigation>
+		<ul class="menu">
+			<li>
+			    <a class="page-scroll" href="/tattoos">Tattoos</a>
+			</li>
+			<li>
+			    <a class="page-scroll" href="/about">Marko Jovicic</a>
+			</li>
+			<li>
+			    <a class="page-scroll" href="/contact">Contact</a>
+		    </li>
+		</ul>
+	</nav>
+    </div>
 	<main class="main-container" role="main">
 		<div class=intro-body>
-			<a href="/">
-				<img height="150px" width="150px" src="/wp-content/themes/maretattoo/img/mare-beli-print.svg">
-			</a>
+		    <a href="/">
+                <img height="150px" width="150px" src="/wp-content/themes/maretattoo/img/mare-beli-print.svg">
+             </a>
 		</div>
 	</main>
 	<section id="about" class="container content-section text-center">
@@ -41,53 +41,55 @@
 		</div>
 	</section>
 
-	<section id="reserve" class="container content-section text-center">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="page-title-wrapper">
-					<h1 class="page-title" data-content-field="title">Book a tattoo</h1>
-				</div>
-				<div class="page-desc" data-content-field="description">
-					<p>Get booked in with Marko for a tattoo&nbsp;</p>
-					<p><a href="/contact">BOOK NOW</a></p>
-				</div>
-			</div>
-		</div>
-	</section>
 	<section id="gallery" class="container content-section text-center">
 		<div class="download-section">
 			<div class="row">
 				<div class="col-md-12">
 					<h2 style="font-size:36px; font-weight: normal;margin-top: 28px;"><a href="/tattoos"><span>Tattoos</span></a></h2>
-					<div id="gallery-1" class="gallery galleryid-7 gallery-columns-5 gallery-size-thumbnail">
+				<div id="gallery-1" class="gallery galleryid-7 gallery-columns-5 gallery-size-thumbnail">
+					<?php
+					$gallery = get_post_gallery(get_the_ID(), false);
+					//  $gallery = get_post_gallery_images( get_the_ID() ); 
+					//print_r($gallery["ids"]);exit; 
+					$slike = explode(",", $gallery["ids"]);
+
+					foreach ($slike as $attachment_id) {
+
+					$thumbnail = wp_get_attachment_image_src($attachment_id, "thumbnail");
+					$full = wp_get_attachment_image_src($attachment_id, "large");
+
+					?>
+					<dl class="gallery-item">
+						<dt class="gallery-icon portrait">
+							<a href="<?php echo $full[0] ?>"
+								rel="lightbox-same"><img width="250" height="250"
+								src="<?php echo $thumbnail[0] ?>"
+								class="attachment-thumbnail" alt="mareportfolio05"></a>
+							</dt>
+						</dl>
 						<?php
-						$gallery = get_post_gallery(get_the_ID(), false);
-						//  $gallery = get_post_gallery_images( get_the_ID() ); 
-						//print_r($gallery["ids"]);exit; 
-						$slike = explode(",", $gallery["ids"]);
+					}
+					?>
+					<div id="clear" style="clear:both;"></div>
+				</div>
+				<p class="test-button"><a href="/tattoos">VIEW MORE</a></p>
+			</div>
+		</div>
+	</div>
+</section>
 
-						foreach ($slike as $attachment_id) {
-
-						$thumbnail = wp_get_attachment_image_src($attachment_id, "thumbnail");
-						$full = wp_get_attachment_image_src($attachment_id, "large");
-
-						?>
-						<dl class="gallery-item">
-							<dt class="gallery-icon portrait">
-								<a href="<?php echo $full[0] ?>"
-									rel="lightbox-same"><img width="250" height="250"
-									src="<?php echo $thumbnail[0] ?>"
-									class="attachment-thumbnail" alt="mareportfolio05"></a>
-								</dt>
-							</dl>
-							<?php
-						}
-						?>
-						<div id="clear" style="clear:both;"></div>
+	<section id="reserve" class="container content-section text-center">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-title-wrapper">
+						<h1 class="page-title" data-content-field="title">Book a tattoo</h1>
+					</div>
+					<div class="page-desc" data-content-field="description">
+						<p>Get booked in with Marko for a tattoo&nbsp;</p>
+						<p class="test-button"><a href="/contact">BOOK NOW</a></p>
 					</div>
 				</div>
 			</div>
-		</div>
 	</section>
-</body>
+	</body>
 </html>
